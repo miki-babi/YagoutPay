@@ -1,0 +1,31 @@
+{
+    "name": "miki-babi/yagoutpay",
+    "description": "Laravel package for YagoutPay Payment Gateway",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Mikiyas Shiferaw",
+            "email": "mikiyasshiferaw99@gmail.com"
+        }
+    ],
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MikiBabi\\YagoutPay\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MikiBabi\\YagoutPay\\YagoutPayServiceProvider"
+            ],
+            "aliases": {
+                "Yagout": "MikiBabi\\YagoutPay\\Facades\\Yagout"
+            }
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}
