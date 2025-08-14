@@ -212,7 +212,6 @@ This package is open-sourced software licensed under the [MIT license](LICENSE.m
 
 ## 🆘 Support
 
-- **Documentation**: [GitHub Wiki](https://github.com/miki-babi/yagoutpay/wiki)
 - **Issues**: [GitHub Issues](https://github.com/miki-babi/yagoutpay/issues)
 - **Email**: mikiyasshiferaw99@gmail.com
 
