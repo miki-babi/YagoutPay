@@ -53,23 +53,26 @@ YAGOUT_FAILURE_URL=https://yoursite.com/payment/failure
 ```php
 use MikiBabi\YagoutPay\Facades\Yagout;
 
+
+Route::get('/checkout', function () {
 // Initialize payment
 $paymentForm = Yagout::initiate(
-    order_id: 'ORDER_' . time(),
+    order_no: 'ORDER_' . time(),
     amount: 150.00,
-    customerDetails: [
+    cust_details: [
         'name'  => 'John Doe',
         'email' => 'john@example.com',
         'phone' => '0912345678'
     ],
     currency: 'ETB', // Optional, defaults to 'ETB'
-    transactionType: 'SALE', // Optional, defaults to 'SALE'
-    success_url: route('payment.success'), // Optional
-    failure_url: route('payment.failure')  // Optional
+    txn_type: 'SALE', // Optional, defaults to 'SALE'
+    // success_url: route('payment.success'), // Optional
+    // failure_url: route('payment.failure')  // Optional
 );
 
 // The method returns a Blade view that auto-submits to YagoutPay
 return $paymentForm;
+});
 ```
 
 ### Controller Example
@@ -93,12 +96,12 @@ class PaymentController extends Controller
             'customer_phone' => 'required|string|max:20',
         ]);
 
-        $orderId = 'ORDER_' . uniqid();
+        $order_no = 'ORDER_' . uniqid();
         
         return Yagout::initiate(
-            orderId: $orderId,
+            order_no: $orderId,
             amount: $validated['amount'],
-            customerDetails: [
+            cust_details: [
                 'name'  => $validated['customer_name'],
                 'email' => $validated['customer_email'],
                 'phone' => $validated['customer_phone']
