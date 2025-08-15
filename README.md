@@ -202,9 +202,6 @@ tail -f storage/logs/laravel.log
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for details on version changes.
 
 ## 📄 License
 
