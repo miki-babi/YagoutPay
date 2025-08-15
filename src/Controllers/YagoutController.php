@@ -12,8 +12,8 @@ class YagoutController extends Controller
     public function decrypt($crypt)
 {
     $iv = "0123456789abcdef";
-    $key = 'IG3CNW5uNrUO2mU2htUOWb9rgXCF7XMAXmL63d7wNZo=';
-    $type = 'aes-256-ecb';
+    // Use configured merchant key to match encryption used during initiate
+    $key = \config('yagoutpay.merchant_key');
     $decodedCrypt = is_string($crypt) ? base64_decode($crypt, true) : $crypt;
 
     if ($decodedCrypt === false) {
