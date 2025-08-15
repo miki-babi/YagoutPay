@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\YagoutPay\Controllers;
+namespace MikiBabi\YagoutPay\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -108,7 +108,9 @@ class YagoutController extends Controller
 
     public function failure(Request $request)
     {
-        $data = $this->parseCallback($request->getContent());
+        $crypt=$request->txn_response;
+        $decrypted = $this->decrypt($crypt);
+        $data = $this->parseCallback($decrypted);
         return $data;
     }
     public function test()

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use YourVendor\YagoutPay\Controllers\YagoutController;
+use MikiBabi\YagoutPay\Controllers\YagoutController;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 
 
