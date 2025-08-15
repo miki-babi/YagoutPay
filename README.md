@@ -55,7 +55,7 @@ use MikiBabi\YagoutPay\Facades\Yagout;
 
 // Initialize payment
 $paymentForm = Yagout::initiate(
-    orderId: 'ORDER_' . time(),
+    order_id: 'ORDER_' . time(),
     amount: 150.00,
     customerDetails: [
         'name'  => 'John Doe',
@@ -64,8 +64,8 @@ $paymentForm = Yagout::initiate(
     ],
     currency: 'ETB', // Optional, defaults to 'ETB'
     transactionType: 'SALE', // Optional, defaults to 'SALE'
-    successUrl: route('payment.success'), // Optional
-    failureUrl: route('payment.failure')  // Optional
+    success_url: route('payment.success'), // Optional
+    failure_url: route('payment.failure')  // Optional
 );
 
 // The method returns a Blade view that auto-submits to YagoutPay
